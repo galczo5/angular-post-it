@@ -13,9 +13,15 @@ export class PostItService {
               @Inject(DOCUMENT) private readonly document: Document) { }
 
   showPostIt(): void {
+    if (this.ref !== null) {
+      return;
+    }
+
     const factory = this.componentFactoryResolver.resolveComponentFactory(PostItWrapperComponent);
     this.ref = factory.create(this.injector);
     document.body.insertBefore(this.ref.location.nativeElement, document.body.firstChild);
+
+    this.ref.changeDetectorRef.detectChanges();
   }
 
   hidePostIt(): void {

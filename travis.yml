@@ -1,0 +1,25 @@
+dist: xenial
+sudo: false
+
+language: node_js
+node_js:
+  - "12"
+
+cache:
+  yarn: true
+  directories:
+    - ./node_modules
+
+install:
+  - yarn install
+
+script:
+  - yarn build -- --prod --base-href "/angular-post-it-app/"
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/angular-post-it-app
+  on:
+    branch: master

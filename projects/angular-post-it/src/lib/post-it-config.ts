@@ -8,9 +8,18 @@ export interface PostItCssConfig {
   postitClass: string;
 }
 
+export interface PostItLabels {
+  searchPlaceholder: string;
+  saveButton: string;
+  deleteButton: string;
+  newCardTitle: string;
+  newCardText: string;
+}
+
 export interface PostItConfig {
   css: PostItCssConfig;
   colors: Array<string>;
+  labels: PostItLabels;
   provider: Type<PostItProviderService>;
   cols: number;
 }
@@ -21,6 +30,13 @@ export const PostItDefaultConfig: Partial<PostItConfig> = {
     backdropClass: '',
     columnClass: '',
     postitClass: ''
+  },
+  labels: {
+    deleteButton: 'Delete',
+    newCardText: 'Something to remember - click to edit',
+    newCardTitle: 'New Card Title - click to edit',
+    saveButton: 'Save',
+    searchPlaceholder: 'Type to search...'
   },
   colors: [],
   provider: NullPostItProviderService

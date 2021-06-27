@@ -31,11 +31,11 @@ import {POST_IT_CONFIG, PostItConfig} from "./post-it-config";
           <div>
             <button *ngIf="postIt.getId()"
                     (click)="remove(postIt.getId())">
-              Delete
+              {{ postItConfig.labels.deleteButton }}
             </button>
             <button *ngIf="editModeEnabled()"
                     (click)="save(postIt.getId(), title.innerText, text.innerText, postIt.getColor())">
-              Save
+              {{ postItConfig.labels.saveButton }}
             </button>
           </div>
         </div>
@@ -81,7 +81,6 @@ import {POST_IT_CONFIG, PostItConfig} from "./post-it-config";
 
     .post-it-color-wrapper {
       display: flex;
-      margin-top: 12px;
     }
 
     .post-it-color {

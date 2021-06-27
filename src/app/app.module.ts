@@ -15,7 +15,8 @@ import {LocalStoragePostItProviderService} from "../../projects/angular-post-it/
     AppRoutingModule,
     PostItModule.forConfig({
       provider: LocalStoragePostItProviderService,
-      cols: 4
+      cols: 4,
+      colors: ['orange', 'lightblue', 'coral', 'blue', 'red']
     })
   ],
   providers: [],

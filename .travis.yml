@@ -14,7 +14,7 @@ install:
   - yarn install
 
 script:
-  - yarn build -- --prod --base-href "/angular-post-it-app/"
+  - yarn build -- --prod --base-href "/angular-post-it/"
 
 deploy:
   provider: pages

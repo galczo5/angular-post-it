@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "angular-post-it": {
+      "projectType": "library",
+      "root": "projects/angular-post-it",
+      "sourceRoot": "projects/angular-post-it/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/angular-post-it/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular-post-it/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/angular-post-it/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-post-it/src/test.ts",
+            "tsConfig": "projects/angular-post-it/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-post-it/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-post-it-app"
